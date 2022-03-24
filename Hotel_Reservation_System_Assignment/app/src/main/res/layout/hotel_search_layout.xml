@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/hotel_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main_constraint_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_horizontal"
+                android:text="Welcome To Hotel Reservation System"
+                android:textColor="@color/black"
+                android:textSize="30sp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/checkin_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-black"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:text="Checkin Date"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/title_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+            <DatePicker
+                android:id="@+id/checkin_datepicker_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/checkin_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/checkin_text_view" />
+
+            <TextView
+                android:id="@+id/checkout_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-black"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:text="Checkout Date"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/title_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/checkin_datepicker_view" />
+
+            <DatePicker
+                android:id="@+id/checkout_datepicker_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/checkout_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/checkout_text_view" />
+
+            <TextView
+                android:id="@+id/guest_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-black"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:text="Number of Guests"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/title_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/checkout_datepicker_view" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Number of Guests"
+                android:id="@+id/guests_count_edit_text_view"
+                app:layout_constraintBottom_toBottomOf="@+id/guest_text_view"
+                app:layout_constraintStart_toEndOf="@+id/guest_text_view"
+                app:layout_constraintTop_toTopOf="@+id/guest_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:inputType="number"/>
+
+            <TextView
+                android:id="@+id/guest_name_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-black"
+                android:textAlignment="textStart"
+                android:gravity="start"
+                android:text="Guest Name"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/title_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/guest_text_view" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:id="@+id/guest_name_edit_text_view"
+                app:layout_constraintBottom_toBottomOf="@+id/guest_name_text_view"
+                app:layout_constraintStart_toEndOf="@+id/guest_name_text_view"
+                app:layout_constraintTop_toTopOf="@+id/guest_name_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:inputType="text"/>
+
+
+            <TextView
+                android:id="@+id/search_confirm_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text=""
+                android:textColor="@color/purple_700"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/guest_name_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/guest_name_text_view" />
+
+            <Button
+                android:id="@+id/confirm_my_search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONFIRM MY SEARCH"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/search_confirm_text_view"/>
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:id="@+id/search_button"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confirm_my_search_button" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
